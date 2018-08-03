@@ -29,28 +29,28 @@ const Movie = require('../models/movie');
 // its info too
 // aka the create route
 router.post('/', async (req, res) => {
-  console.log(req.session, ' this is session')
-
-
+  // contents of the form will be in req.body
   try {
-    const createdMovie = await User.create(req.body);
-
-    req.session.logged = true;
-    req.session.username = req.body.username;
-
+    console.log(req.body, ' this is req.body');
+    const createdMovie = await Movie.create(req.body);
 
     res.json({
       status: 200,
-      data: 'login successful'
+      data: createdMovie
     });
-
-
 
   } catch(err){
     console.log(err);
     res.send(err);
   }
 });
+
+
+
+
+
+
+
 
 
 
