@@ -7,7 +7,7 @@ router.post('/', async (req, res) => {
 
 
   try {
-    const createdMovie = await User.create(req.body);
+    const createdUser = await User.create(req.body);
 
     req.session.logged = true;
     req.session.username = req.body.username;
