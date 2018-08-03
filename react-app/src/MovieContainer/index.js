@@ -39,7 +39,7 @@ class MovieContainer extends Component {
     e.preventDefault();
     try {
         const createdMovie = await fetch('http://localhost:9000/api/v1/movies', {
-          // credentials: 'include',
+           credentials: 'include',
           method: 'POST',
           body: JSON.stringify(movie),
           headers:{
@@ -61,7 +61,7 @@ class MovieContainer extends Component {
     e.preventDefault();
     try {
         const deleteMovie = await fetch('http://localhost:9000/api/v1/movies/' + id, {
-          // credentials: 'include',
+           credentials: 'include',
           method: 'DELETE'
         });
         console.log('inside try')
@@ -89,7 +89,7 @@ class MovieContainer extends Component {
 
     try {
       const editResponse = await fetch('http://localhost:9000/api/v1/movies/' + this.state.editMovieId, {
-        // credentials: 'include',
+         credentials: 'include',
         method: 'PUT',
         body: JSON.stringify(this.state.movieToEdit),
         headers:{
